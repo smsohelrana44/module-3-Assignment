@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module-3 Assignment</title>
+</head>
+<body>
+    <script>
+        /* ==================== (1) Javascript For in loop ===============*/
+
+
+        function printObjectProperties(obj) {
+  // Check if the object is empty
+  if (Object.keys(obj).length === 0) {
+    console.log("Object is empty");
+  } else {
+    for (let prop in obj) {
+      console.log(`${prop}: ${obj[prop]}`);
+    }
+  }
+}
+
+// Example usage
+const myObject = {
+  name: "John",
+  age: 30,
+  occupation: "Developer"
+};
+
+printObjectProperties(myObject);
+
+const emptyObject = {};
+
+printObjectProperties(emptyObject);
+
+/* ==================== (2) javascript function returns ================ */
+
+function findMaxNumber(arr) {
+  if (arr.length === 0) {
+    return null;
+  }
+
+  let maxNumber = arr[0]; // Assume the first number is the maximum
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > maxNumber) {
+      maxNumber = arr[i]; // Update maxNumber if a larger number is found
+    }
+  }
+
+  return maxNumber;
+}
+
+// Example usage
+const numbers = [10, 20, 5, 30, 25];
+const max = findMaxNumber(numbers);
+console.log("The maximum number is:", max); // Output: The maximum number is: 30
+
+/* ================== (3) javascript Spread Operator ======================== */
+
+function mergeArrays(arr1, arr2) {
+  return [...arr1, ...arr2];
+}
+
+// Example usage:
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+const mergedArray = mergeArrays(array1, array2);
+console.log(mergedArray); // Output: [1, 2, 3, 4, 5, 6]
+
+/* ==================== (4) Javascript arrow function ======================  */
+const calculateSquare = (number) => {
+  return number * number;
+};
+
+// Example usage
+const inputNumber = 5;
+const square = calculateSquare(inputNumber);
+console.log(`The square of ${inputNumber} is ${square}`);
+
+/* =================== (5)  Javascript es6 map ========================= */
+
+function doubleNumbers(numbers) {
+  const doubledArray = numbers.map(number => number * 2);
+  return doubledArray;
+}
+
+// Example usage
+const originalArray = [1, 2, 3, 4, 5];
+const doubledArray = doubleNumbers(originalArray);
+console.log(doubledArray); // Output: [2, 4, 6, 8, 10]
+
+
+/* =================== (6) Javascript es6 static keyword ============== */
+
+class MathUtility {
+  static multiply(a, b) {
+    return a * b;
+  }
+}
+
+// Usage
+const result = MathUtility.multiply(5, 3); // Calling the static method
+console.log(result); // Output: 15
+
+/* ============== (7) Javascript es6 class inheritance ================= */
+
+class Animal {
+    constructor(name, sound) {
+        this.name = name;
+        this.sound = sound;
+    }
+
+    makeSound() {
+        console.log(`${this.name} makes a sound: ${this.sound}`);
+    }
+}
+
+class Dog extends Animal {
+    fetch() {
+        console.log(`${this.name} is fetching the ball!`);
+    }
+}
+
+// Creating instances and using the classes
+const animal = new Animal("Lion", "Roar");
+animal.makeSound(); // Output: Lion makes a sound: Roar
+
+const dog = new Dog("Dog", "Woof");
+dog.makeSound(); // Output: Dog makes a sound: Woof
+dog.fetch();     // Output: Dog is fetching the ball!
+
+/* ================== (8) Javascript es6 super keyword ===================*/
+
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    introduce() {
+        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+    }
+}
+
+class Student extends Person {
+    constructor(name, age, major) {
+        super(name, age);
+        this.major = major;
+    }
+
+    introduce() {
+        console.log(`Hello, I'm ${this.name}, I'm ${this.age} years old, and I'm majoring in ${this.major}.`);
+    }
+}
+
+// Usage
+const person1 = new Person("John", 30);
+person1.introduce();
+
+const student1 = new Student("Alice", 20, "Computer Science");
+student1.introduce();
+
+
+
+    </script>
+</body>
+</html>
